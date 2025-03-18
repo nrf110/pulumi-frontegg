@@ -5,30 +5,73 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export { GetDataSourceArgs, GetDataSourceResult, GetDataSourceOutputArgs } from "./getDataSource";
-export const getDataSource: typeof import("./getDataSource").getDataSource = null as any;
-export const getDataSourceOutput: typeof import("./getDataSource").getDataSourceOutput = null as any;
-utilities.lazyLoad(exports, ["getDataSource","getDataSourceOutput"], () => require("./getDataSource"));
+export { AllowedOriginArgs, AllowedOriginState } from "./allowedOrigin";
+export type AllowedOrigin = import("./allowedOrigin").AllowedOrigin;
+export const AllowedOrigin: typeof import("./allowedOrigin").AllowedOrigin = null as any;
+utilities.lazyLoad(exports, ["AllowedOrigin"], () => require("./allowedOrigin"));
+
+export { EmailProviderArgs, EmailProviderState } from "./emailProvider";
+export type EmailProvider = import("./emailProvider").EmailProvider;
+export const EmailProvider: typeof import("./emailProvider").EmailProvider = null as any;
+utilities.lazyLoad(exports, ["EmailProvider"], () => require("./emailProvider"));
+
+export { GetPermissionArgs, GetPermissionResult, GetPermissionOutputArgs } from "./getPermission";
+export const getPermission: typeof import("./getPermission").getPermission = null as any;
+export const getPermissionOutput: typeof import("./getPermission").getPermissionOutput = null as any;
+utilities.lazyLoad(exports, ["getPermission","getPermissionOutput"], () => require("./getPermission"));
+
+export { PermissionArgs, PermissionState } from "./permission";
+export type Permission = import("./permission").Permission;
+export const Permission: typeof import("./permission").Permission = null as any;
+utilities.lazyLoad(exports, ["Permission"], () => require("./permission"));
+
+export { PermissionCategoryArgs, PermissionCategoryState } from "./permissionCategory";
+export type PermissionCategory = import("./permissionCategory").PermissionCategory;
+export const PermissionCategory: typeof import("./permissionCategory").PermissionCategory = null as any;
+utilities.lazyLoad(exports, ["PermissionCategory"], () => require("./permissionCategory"));
 
 export { ProviderArgs } from "./provider";
 export type Provider = import("./provider").Provider;
 export const Provider: typeof import("./provider").Provider = null as any;
 utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
 
-export { ResourceArgs, ResourceState } from "./resource";
-export type Resource = import("./resource").Resource;
-export const Resource: typeof import("./resource").Resource = null as any;
-utilities.lazyLoad(exports, ["Resource"], () => require("./resource"));
+export { RedirectUriArgs, RedirectUriState } from "./redirectUri";
+export type RedirectUri = import("./redirectUri").RedirectUri;
+export const RedirectUri: typeof import("./redirectUri").RedirectUri = null as any;
+utilities.lazyLoad(exports, ["RedirectUri"], () => require("./redirectUri"));
+
+export { RoleArgs, RoleState } from "./role";
+export type Role = import("./role").Role;
+export const Role: typeof import("./role").Role = null as any;
+utilities.lazyLoad(exports, ["Role"], () => require("./role"));
+
+export { TenantArgs, TenantState } from "./tenant";
+export type Tenant = import("./tenant").Tenant;
+export const Tenant: typeof import("./tenant").Tenant = null as any;
+utilities.lazyLoad(exports, ["Tenant"], () => require("./tenant"));
+
+export { UserArgs, UserState } from "./user";
+export type User = import("./user").User;
+export const User: typeof import("./user").User = null as any;
+utilities.lazyLoad(exports, ["User"], () => require("./user"));
+
+export { WebhookArgs, WebhookState } from "./webhook";
+export type Webhook = import("./webhook").Webhook;
+export const Webhook: typeof import("./webhook").Webhook = null as any;
+utilities.lazyLoad(exports, ["Webhook"], () => require("./webhook"));
+
+export { WorkspaceArgs, WorkspaceState } from "./workspace";
+export type Workspace = import("./workspace").Workspace;
+export const Workspace: typeof import("./workspace").Workspace = null as any;
+utilities.lazyLoad(exports, ["Workspace"], () => require("./workspace"));
 
 
 // Export sub-modules:
 import * as config from "./config";
-import * as region from "./region";
 import * as types from "./types";
 
 export {
     config,
-    region,
     types,
 };
 
@@ -36,18 +79,45 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
-            case "xyz:index/resource:Resource":
-                return new Resource(name, <any>undefined, { urn })
+            case "frontegg:index/allowedOrigin:AllowedOrigin":
+                return new AllowedOrigin(name, <any>undefined, { urn })
+            case "frontegg:index/emailProvider:EmailProvider":
+                return new EmailProvider(name, <any>undefined, { urn })
+            case "frontegg:index/permission:Permission":
+                return new Permission(name, <any>undefined, { urn })
+            case "frontegg:index/permissionCategory:PermissionCategory":
+                return new PermissionCategory(name, <any>undefined, { urn })
+            case "frontegg:index/redirectUri:RedirectUri":
+                return new RedirectUri(name, <any>undefined, { urn })
+            case "frontegg:index/role:Role":
+                return new Role(name, <any>undefined, { urn })
+            case "frontegg:index/tenant:Tenant":
+                return new Tenant(name, <any>undefined, { urn })
+            case "frontegg:index/user:User":
+                return new User(name, <any>undefined, { urn })
+            case "frontegg:index/webhook:Webhook":
+                return new Webhook(name, <any>undefined, { urn })
+            case "frontegg:index/workspace:Workspace":
+                return new Workspace(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
-pulumi.runtime.registerResourceModule("xyz", "index/resource", _module)
-pulumi.runtime.registerResourcePackage("xyz", {
+pulumi.runtime.registerResourceModule("frontegg", "index/allowedOrigin", _module)
+pulumi.runtime.registerResourceModule("frontegg", "index/emailProvider", _module)
+pulumi.runtime.registerResourceModule("frontegg", "index/permission", _module)
+pulumi.runtime.registerResourceModule("frontegg", "index/permissionCategory", _module)
+pulumi.runtime.registerResourceModule("frontegg", "index/redirectUri", _module)
+pulumi.runtime.registerResourceModule("frontegg", "index/role", _module)
+pulumi.runtime.registerResourceModule("frontegg", "index/tenant", _module)
+pulumi.runtime.registerResourceModule("frontegg", "index/user", _module)
+pulumi.runtime.registerResourceModule("frontegg", "index/webhook", _module)
+pulumi.runtime.registerResourceModule("frontegg", "index/workspace", _module)
+pulumi.runtime.registerResourcePackage("frontegg", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {
-        if (type !== "pulumi:providers:xyz") {
+        if (type !== "pulumi:providers:frontegg") {
             throw new Error(`unknown provider type ${type}`);
         }
         return new Provider(name, <any>undefined, { urn });

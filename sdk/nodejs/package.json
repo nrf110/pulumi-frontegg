@@ -1,13 +1,13 @@
 {
-    "name": "@pulumi/xyz",
+    "name": "@pulumi/frontegg",
     "version": "1.0.0-alpha.0+dev",
-    "description": "A Pulumi package for creating and managing xyz cloud resources.",
+    "description": "A Pulumi package for creating and managing frontegg cloud resources.",
     "keywords": [
-        "xyz",
+        "frontegg",
         "category/cloud"
     ],
-    "homepage": "https://www.pulumi.com",
-    "repository": "https://github.com/pulumi/pulumi-xyz",
+    "homepage": "https://github.com/nrf110/pulumi-frontegg",
+    "repository": "https://github.com/nrf110/pulumi-frontegg",
     "license": "Apache-2.0",
     "scripts": {
         "build": "tsc"
@@ -21,7 +21,7 @@
     },
     "pulumi": {
         "resource": true,
-        "name": "xyz",
+        "name": "frontegg",
         "version": "1.0.0-alpha.0+dev"
     }
 }

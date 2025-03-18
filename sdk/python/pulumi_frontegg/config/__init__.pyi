@@ -13,18 +13,29 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
-from .. import region
 
-import types
+apiBaseUrl: Optional[str]
+"""
+The Frontegg api url. Override to change region. Defaults to EU url.
+"""
 
-__config__ = pulumi.Config('xyz')
+clientId: Optional[str]
+"""
+The client ID for a Frontegg portal API key.
+"""
 
+environmentId: Optional[str]
+"""
+The client ID from environment settings.
+"""
 
-class _ExportableConfig(types.ModuleType):
-    @property
-    def region(self) -> Optional[str]:
-        """
-        A region which should be used.
-        """
-        return __config__.get('region')
+portalBaseUrl: Optional[str]
+"""
+The Frontegg portal url. Override to change region. Defaults to EU url.
+"""
+
+secretKey: Optional[str]
+"""
+The corresponding secret key for the API key.
+"""
 

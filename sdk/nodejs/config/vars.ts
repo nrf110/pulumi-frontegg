@@ -2,21 +2,62 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "../types/input";
-import * as outputs from "../types/output";
-import * as enums from "../types/enums";
 import * as utilities from "../utilities";
 
 declare var exports: any;
-const __config = new pulumi.Config("xyz");
+const __config = new pulumi.Config("frontegg");
 
 /**
- * A region which should be used.
+ * The Frontegg api url. Override to change region. Defaults to EU url.
  */
-export declare const region: enums.region.Region | undefined;
-Object.defineProperty(exports, "region", {
+export declare const apiBaseUrl: string | undefined;
+Object.defineProperty(exports, "apiBaseUrl", {
     get() {
-        return __config.getObject<enums.region.Region>("region");
+        return __config.get("apiBaseUrl");
+    },
+    enumerable: true,
+});
+
+/**
+ * The client ID for a Frontegg portal API key.
+ */
+export declare const clientId: string | undefined;
+Object.defineProperty(exports, "clientId", {
+    get() {
+        return __config.get("clientId");
+    },
+    enumerable: true,
+});
+
+/**
+ * The client ID from environment settings.
+ */
+export declare const environmentId: string | undefined;
+Object.defineProperty(exports, "environmentId", {
+    get() {
+        return __config.get("environmentId");
+    },
+    enumerable: true,
+});
+
+/**
+ * The Frontegg portal url. Override to change region. Defaults to EU url.
+ */
+export declare const portalBaseUrl: string | undefined;
+Object.defineProperty(exports, "portalBaseUrl", {
+    get() {
+        return __config.get("portalBaseUrl");
+    },
+    enumerable: true,
+});
+
+/**
+ * The corresponding secret key for the API key.
+ */
+export declare const secretKey: string | undefined;
+Object.defineProperty(exports, "secretKey", {
+    get() {
+        return __config.get("secretKey");
     },
     enumerable: true,
 });

@@ -13,18 +13,24 @@
         "strict": true
     },
     "files": [
+        "allowedOrigin.ts",
         "config/index.ts",
         "config/vars.ts",
-        "getDataSource.ts",
+        "emailProvider.ts",
+        "getPermission.ts",
         "index.ts",
+        "permission.ts",
+        "permissionCategory.ts",
         "provider.ts",
-        "region/index.ts",
-        "resource.ts",
-        "types/enums/index.ts",
-        "types/enums/region/index.ts",
+        "redirectUri.ts",
+        "role.ts",
+        "tenant.ts",
         "types/index.ts",
         "types/input.ts",
         "types/output.ts",
-        "utilities.ts"
+        "user.ts",
+        "utilities.ts",
+        "webhook.ts",
+        "workspace.ts"
     ]
 }

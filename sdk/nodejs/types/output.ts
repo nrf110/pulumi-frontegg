@@ -4,5 +4,1448 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
-import * as enums from "../types/enums";
+
+export interface WorkspaceAdminPortal {
+    /**
+     * Enable access to account settings in the admin portal.
+     */
+    enableAccountSettings: boolean;
+    /**
+     * Enable access to API tokens in the admin portal.
+     */
+    enableApiTokens: boolean;
+    /**
+     * Enable access to audit logs in the admin portal.
+     */
+    enableAuditLogs: boolean;
+    /**
+     * Enable access to groups in the admin portal.
+     */
+    enableGroups: boolean;
+    /**
+     * Enable access to personal API tokens in the admin portal.
+     */
+    enablePersonalApiTokens: boolean;
+    /**
+     * Enable access to privacy settings in the admin portal.
+     */
+    enablePrivacy: boolean;
+    /**
+     * Enable access to profile settings in the admin portal.
+     */
+    enableProfile: boolean;
+    /**
+     * Enable access to provisioning settings in the admin portal.
+     */
+    enableProvisioning: boolean;
+    /**
+     * Enable access to roles and permissions in the admin portal.
+     */
+    enableRoles: boolean;
+    /**
+     * Enable access to security settings in the admin portal.
+     */
+    enableSecurity: boolean;
+    /**
+     * Enable access to SSO settings in the admin portal.
+     */
+    enableSso: boolean;
+    /**
+     * Enable access to subscription settings in the admin portal.
+     */
+    enableSubscriptions: boolean;
+    /**
+     * Enable access to usage information in the admin portal.
+     */
+    enableUsage: boolean;
+    /**
+     * Enable access to user management in the admin portal.
+     */
+    enableUsers: boolean;
+    /**
+     * Enable access to webhooks in the admin portal.
+     */
+    enableWebhooks: boolean;
+    /**
+     * Configures the color palette for the admin portal.
+     *
+     * @deprecated Use `paletteAdminPortal Or/And paletteLoginBox` instead.
+     */
+    palette?: outputs.WorkspaceAdminPortalPalette;
+    /**
+     * Configures the color palette for the admin portal.
+     */
+    paletteAdminPortal?: outputs.WorkspaceAdminPortalPaletteAdminPortal;
+    /**
+     * Configures the color palette for the admin portal.
+     */
+    paletteLoginBox?: outputs.WorkspaceAdminPortalPaletteLoginBox;
+}
+
+export interface WorkspaceAdminPortalPalette {
+    /**
+     * Error color.
+     */
+    errors?: outputs.WorkspaceAdminPortalPaletteError[];
+    /**
+     * Info color.
+     */
+    infos?: outputs.WorkspaceAdminPortalPaletteInfo[];
+    /**
+     * Primary color.
+     */
+    primaries?: outputs.WorkspaceAdminPortalPalettePrimary[];
+    /**
+     * Secondary color.
+     */
+    secondaries?: outputs.WorkspaceAdminPortalPaletteSecondary[];
+    /**
+     * Success color.
+     */
+    successes?: outputs.WorkspaceAdminPortalPaletteSuccess[];
+    /**
+     * Warning color.
+     */
+    warnings?: outputs.WorkspaceAdminPortalPaletteWarning[];
+}
+
+export interface WorkspaceAdminPortalPaletteAdminPortal {
+    /**
+     * Error color.
+     */
+    errors?: outputs.WorkspaceAdminPortalPaletteAdminPortalError[];
+    /**
+     * Info color.
+     */
+    infos?: outputs.WorkspaceAdminPortalPaletteAdminPortalInfo[];
+    /**
+     * Primary color.
+     */
+    primaries?: outputs.WorkspaceAdminPortalPaletteAdminPortalPrimary[];
+    /**
+     * Secondary color.
+     */
+    secondaries?: outputs.WorkspaceAdminPortalPaletteAdminPortalSecondary[];
+    /**
+     * Success color.
+     */
+    successes?: outputs.WorkspaceAdminPortalPaletteAdminPortalSuccess[];
+    /**
+     * Warning color.
+     */
+    warnings?: outputs.WorkspaceAdminPortalPaletteAdminPortalWarning[];
+}
+
+export interface WorkspaceAdminPortalPaletteAdminPortalError {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteAdminPortalInfo {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteAdminPortalPrimary {
+    /**
+     * active color.
+     */
+    active: string;
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * hover color.
+     */
+    hover: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteAdminPortalSecondary {
+    /**
+     * active color.
+     */
+    active: string;
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * hover color.
+     */
+    hover: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteAdminPortalSuccess {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteAdminPortalWarning {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteError {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteInfo {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteLoginBox {
+    /**
+     * Error color.
+     */
+    errors?: outputs.WorkspaceAdminPortalPaletteLoginBoxError[];
+    /**
+     * Info color.
+     */
+    infos?: outputs.WorkspaceAdminPortalPaletteLoginBoxInfo[];
+    /**
+     * Primary color.
+     */
+    primaries?: outputs.WorkspaceAdminPortalPaletteLoginBoxPrimary[];
+    /**
+     * Secondary color.
+     */
+    secondaries?: outputs.WorkspaceAdminPortalPaletteLoginBoxSecondary[];
+    /**
+     * Success color.
+     */
+    successes?: outputs.WorkspaceAdminPortalPaletteLoginBoxSuccess[];
+    /**
+     * Warning color.
+     */
+    warnings?: outputs.WorkspaceAdminPortalPaletteLoginBoxWarning[];
+}
+
+export interface WorkspaceAdminPortalPaletteLoginBoxError {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteLoginBoxInfo {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteLoginBoxPrimary {
+    /**
+     * active color.
+     */
+    active: string;
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * hover color.
+     */
+    hover: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteLoginBoxSecondary {
+    /**
+     * active color.
+     */
+    active: string;
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * hover color.
+     */
+    hover: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteLoginBoxSuccess {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteLoginBoxWarning {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPalettePrimary {
+    /**
+     * active color.
+     */
+    active: string;
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * hover color.
+     */
+    hover: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteSecondary {
+    /**
+     * active color.
+     */
+    active: string;
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * hover color.
+     */
+    hover: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteSuccess {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAdminPortalPaletteWarning {
+    /**
+     * contrast_text color.
+     */
+    contrastText: string;
+    /**
+     * dark color.
+     */
+    dark: string;
+    /**
+     * light color.
+     */
+    light: string;
+    /**
+     * main color.
+     */
+    main: string;
+}
+
+export interface WorkspaceAuthPolicy {
+    /**
+     * Whether users are allowed to sign up.
+     */
+    allowSignups: boolean;
+    /**
+     * Allow tenants to invite new users via an invitation link.
+     */
+    allowTenantInvitations: boolean;
+    /**
+     * Whether unverified users are allowed to log in.
+     */
+    allowUnverifiedUsers: boolean;
+    /**
+     * The authentication strategy to use for people logging in.
+     *
+     * 	Must be one of "EmailAndPassword", "Code", "MagicLink", "NoLocalAuthentication", "SmsCode"
+     */
+    authStrategy: string;
+    /**
+     * Whether users can create API tokens.
+     */
+    enableApiTokens: boolean;
+    /**
+     * Whether granular roles and permissions are enabled.
+     */
+    enableRoles: boolean;
+    /**
+     * The expiration time for the JWT access tokens issued by Frontegg.
+     */
+    jwtAccessTokenExpiration: number;
+    /**
+     * The algorithm Frontegg uses to sign JWT tokens.
+     */
+    jwtAlgorithm?: string;
+    /**
+     * The public key that Frontegg uses to sign JWT tokens.
+     */
+    jwtPublicKey: string;
+    /**
+     * The expiration time for the JWT refresh tokens issued by Frontegg.
+     */
+    jwtRefreshTokenExpiration: number;
+    /**
+     * Type of tokens users will be able to generate.
+     * 							Must be one of "ClientCredentials" or "AccessToken".
+     */
+    machineToMachineAuthStrategy?: string;
+    /**
+     * The SameSite policy to use for Frontegg cookies.
+     *
+     * 	Must be one of "none", "lax", or "strict".
+     */
+    sameSiteCookiePolicy: string;
+}
+
+export interface WorkspaceBotDetectionEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceBruteForceProtectionEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceBulkTenantsInvitesEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceCaptchaPolicy {
+    /**
+     * Email addresses that should be exempt from CAPTCHA checks.
+     */
+    ignoredEmails?: string[];
+    /**
+     * The minimum CAPTCHA score to accept. Set to 0.0 to accept all scores.
+     */
+    minScore: number;
+    /**
+     * The reCAPTCHA secret key to use.
+     */
+    secretKey: string;
+    /**
+     * The reCAPTCHA site key to use.
+     */
+    siteKey: string;
+}
+
+export interface WorkspaceEmailVerificationEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceFacebookSocialLogin {
+    /**
+     * The client ID of the Facebook application to authenticate with. Required when setting **`customised`** parameter to true.
+     */
+    clientId?: string;
+    /**
+     * Determine whether the SSO should use customized secret and client ID. When passing true, clientId and secret are also required.
+     */
+    customised?: boolean;
+    /**
+     * The URL to redirect to after a successful authentication.
+     */
+    redirectUrl: string;
+    /**
+     * The secret associated with the Facebook application. Required when setting **`customised`** parameter to true.
+     */
+    secret?: string;
+}
+
+export interface WorkspaceGithubSocialLogin {
+    /**
+     * The client ID of the GitHub application to authenticate with. Required when setting **`customised`** parameter to true.
+     */
+    clientId?: string;
+    /**
+     * Determine whether the SSO should use customized secret and client ID. When passing true, clientId and secret are also required.
+     */
+    customised?: boolean;
+    /**
+     * The URL to redirect to after a successful authentication.
+     */
+    redirectUrl: string;
+    /**
+     * The secret associated with the GitHub application. Required when setting **`customised`** parameter to true.
+     */
+    secret?: string;
+}
+
+export interface WorkspaceGoogleSocialLogin {
+    /**
+     * The client ID of the Google application to authenticate with. Required when setting **`customised`** parameter to true.
+     */
+    clientId?: string;
+    /**
+     * Determine whether the SSO should use customized secret and client ID. When passing true, clientId and secret are also required.
+     */
+    customised?: boolean;
+    /**
+     * The URL to redirect to after a successful authentication.
+     */
+    redirectUrl: string;
+    /**
+     * The secret associated with the Google application. Required when setting **`customised`** parameter to true.
+     */
+    secret?: string;
+}
+
+export interface WorkspaceHostedLogin {
+    /**
+     * Allowed redirect URLs.
+     */
+    allowedRedirectUrls?: string[];
+}
+
+export interface WorkspaceImpossibleTravelEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceLockoutPolicy {
+    /**
+     * The number of failed attempts after which a user will be locked out.
+     */
+    maxAttempts: number;
+}
+
+export interface WorkspaceMagicCodeEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceMagicLinkEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceMfaAuthenticationApp {
+    /**
+     * The service name to display in the authentication app.
+     */
+    serviceName: string;
+}
+
+export interface WorkspaceMfaEnrollEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceMfaOtcEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceMfaPolicy {
+    /**
+     * Allow users to remember their MFA devices.
+     */
+    allowRememberDevice: boolean;
+    /**
+     * The number of seconds that MFA devices can be remembered for, if allowRememberMyDevice is true.
+     */
+    deviceExpiration: number;
+    /**
+     * Whether to force use of MFA.
+     *
+     * 	Must be one of "off", "on", or "unless-saml".
+     */
+    enforce: string;
+}
+
+export interface WorkspaceMfaRecoveryCodeEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceMfaUnenrollEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceMicrosoftSocialLogin {
+    /**
+     * The client ID of the Microsoft application to authenticate with. Required when setting **`customised`** parameter to true.
+     */
+    clientId?: string;
+    /**
+     * Determine whether the SSO should use customized secret and client ID. When passing true, clientId and secret are also required.
+     */
+    customised?: boolean;
+    /**
+     * The URL to redirect to after a successful authentication.
+     */
+    redirectUrl: string;
+    /**
+     * The secret associated with the Microsoft application. Required when setting **`customised`** parameter to true.
+     */
+    secret?: string;
+}
+
+export interface WorkspaceNewDeviceConnectedEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceNewMfaMethodEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceOidc {
+    /**
+     * The URL to redirect to after the OIDC exchange.
+     */
+    redirectUrl: string;
+}
+
+export interface WorkspacePasswordPolicy {
+    allowPassphrases: boolean;
+    /**
+     * The number of historical passwords to prevent users from reusing. Set to zero to disable.
+     */
+    history: number;
+    /**
+     * The maximum length of a password.
+     */
+    maxLength: number;
+    /**
+     * The minimum length of a password.
+     */
+    minLength: number;
+    minPhraseLength: number;
+    /**
+     * The minimum number of strength tests the password must meet.
+     */
+    minTests: number;
+}
+
+export interface WorkspacePwnedPasswordEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceRemoveMfaMethodEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceResetPasswordEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceResetPhoneNumberEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceSaml {
+    /**
+     * The ACS URL for the SAML authentication flow.
+     */
+    acsUrl: string;
+    /**
+     * The URL to redirect to after the SAML exchange.
+     */
+    redirectUrl?: string;
+    /**
+     * The name of the service provider that will be displayed to users.
+     */
+    spEntityId: string;
+}
+
+export interface WorkspaceSmsAuthenticationEnabledEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceSsoDomainPolicy {
+    /**
+     * Whether to allow users to add their own email domain without validating the domain through DNS.
+     */
+    allowVerifiedUsersToAddDomains?: boolean;
+    /**
+     * Whether to allow users to sign in even via SSO even if the associated domain has not been validated through DNS.
+     */
+    bypassDomainCrossValidation?: boolean;
+    /**
+     * Whether to automatically mark new SSO domains as validated, without validating the domain through DNS.
+     */
+    skipDomainVerification?: boolean;
+}
+
+export interface WorkspaceSsoMultiTenantPolicy {
+    /**
+     * Strategy for logging in nonexisting users that match SSO configurations for multiple tenants when no tenant has been specified. Either BLOCK or FIRST_CREATED.
+     */
+    unspecifiedTenantStrategy?: string;
+    /**
+     * Whether users with existing accounts that match SSO configurations for multiple tenants should be logged in using the SSO for their active (last logged into) account, or whether the unspecified tenant strategy should apply.
+     */
+    useActiveTenant?: boolean;
+}
+
+export interface WorkspaceSuspiciousIpEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceUserActivationEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceUserInvitationEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
+
+export interface WorkspaceUserUsedInvitationEmail {
+    /**
+     * The address to use in the "From" header of the email.
+     */
+    fromAddress: string;
+    /**
+     * The name to use in the "From" header of the email.
+     */
+    fromName: string;
+    /**
+     * The HTML template to use in the email.
+     */
+    htmlTemplate: string;
+    /**
+     * The redirect URL to use, if applicable.
+     *
+     *     Access this value as "\{\{redirectURL\}\}" in the template.
+     */
+    redirectUrl?: string;
+    /**
+     * The subject of the email.
+     */
+    subject: string;
+    /**
+     * The success redirect URL to use, if applicable.
+     */
+    successRedirectUrl?: string;
+}
 

@@ -2,20 +2,17 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import * as inputs from "./types/input";
-import * as outputs from "./types/output";
-import * as enums from "./types/enums";
 import * as utilities from "./utilities";
 
 /**
- * The provider type for the xyz package. By default, resources use package-wide configuration
+ * The provider type for the frontegg package. By default, resources use package-wide configuration
  * settings, however an explicit `Provider` instance may be created and passed during resource
  * construction to achieve fine-grained programmatic control over provider settings. See the
  * [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
  */
 export class Provider extends pulumi.ProviderResource {
     /** @internal */
-    public static readonly __pulumiType = 'xyz';
+    public static readonly __pulumiType = 'frontegg';
 
     /**
      * Returns true if the given object is an instance of Provider.  This is designed to work even
@@ -28,6 +25,26 @@ export class Provider extends pulumi.ProviderResource {
         return obj['__pulumiType'] === "pulumi:providers:" + Provider.__pulumiType;
     }
 
+    /**
+     * The Frontegg api url. Override to change region. Defaults to EU url.
+     */
+    public readonly apiBaseUrl!: pulumi.Output<string | undefined>;
+    /**
+     * The client ID for a Frontegg portal API key.
+     */
+    public readonly clientId!: pulumi.Output<string>;
+    /**
+     * The client ID from environment settings.
+     */
+    public readonly environmentId!: pulumi.Output<string | undefined>;
+    /**
+     * The Frontegg portal url. Override to change region. Defaults to EU url.
+     */
+    public readonly portalBaseUrl!: pulumi.Output<string | undefined>;
+    /**
+     * The corresponding secret key for the API key.
+     */
+    public readonly secretKey!: pulumi.Output<string>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -36,13 +53,25 @@ export class Provider extends pulumi.ProviderResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args?: ProviderArgs, opts?: pulumi.ResourceOptions) {
+    constructor(name: string, args: ProviderArgs, opts?: pulumi.ResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["region"] = args ? args.region : undefined;
+            if ((!args || args.clientId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'clientId'");
+            }
+            if ((!args || args.secretKey === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'secretKey'");
+            }
+            resourceInputs["apiBaseUrl"] = args ? args.apiBaseUrl : undefined;
+            resourceInputs["clientId"] = args ? args.clientId : undefined;
+            resourceInputs["environmentId"] = args?.environmentId ? pulumi.secret(args.environmentId) : undefined;
+            resourceInputs["portalBaseUrl"] = args ? args.portalBaseUrl : undefined;
+            resourceInputs["secretKey"] = args?.secretKey ? pulumi.secret(args.secretKey) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["environmentId", "secretKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -52,7 +81,23 @@ export class Provider extends pulumi.ProviderResource {
  */
 export interface ProviderArgs {
     /**
-     * A region which should be used.
+     * The Frontegg api url. Override to change region. Defaults to EU url.
      */
-    region?: pulumi.Input<enums.region.Region>;
+    apiBaseUrl?: pulumi.Input<string>;
+    /**
+     * The client ID for a Frontegg portal API key.
+     */
+    clientId: pulumi.Input<string>;
+    /**
+     * The client ID from environment settings.
+     */
+    environmentId?: pulumi.Input<string>;
+    /**
+     * The Frontegg portal url. Override to change region. Defaults to EU url.
+     */
+    portalBaseUrl?: pulumi.Input<string>;
+    /**
+     * The corresponding secret key for the API key.
+     */
+    secretKey: pulumi.Input<string>;
 }
