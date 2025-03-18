@@ -1,0 +1,283 @@
+{
+    "auto-aliasing": {
+        "resources": {
+            "frontegg_allowed_origin": {
+                "current": "frontegg:index/allowedOrigin:AllowedOrigin",
+                "majorVersion": 1
+            },
+            "frontegg_email_provider": {
+                "current": "frontegg:index/emailProvider:EmailProvider",
+                "majorVersion": 1
+            },
+            "frontegg_permission": {
+                "current": "frontegg:index/permission:Permission",
+                "majorVersion": 1
+            },
+            "frontegg_permission_category": {
+                "current": "frontegg:index/permissionCategory:PermissionCategory",
+                "majorVersion": 1
+            },
+            "frontegg_redirect_uri": {
+                "current": "frontegg:index/redirectUri:RedirectUri",
+                "majorVersion": 1
+            },
+            "frontegg_role": {
+                "current": "frontegg:index/role:Role",
+                "majorVersion": 1,
+                "fields": {
+                    "permission_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "frontegg_tenant": {
+                "current": "frontegg:index/tenant:Tenant",
+                "majorVersion": 1
+            },
+            "frontegg_user": {
+                "current": "frontegg:index/user:User",
+                "majorVersion": 1,
+                "fields": {
+                    "role_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "frontegg_webhook": {
+                "current": "frontegg:index/webhook:Webhook",
+                "majorVersion": 1,
+                "fields": {
+                    "events": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "frontegg_workspace": {
+                "current": "frontegg:index/workspace:Workspace",
+                "majorVersion": 1,
+                "fields": {
+                    "admin_portal": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "palette": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "error": {
+                                                "maxItemsOne": false
+                                            },
+                                            "info": {
+                                                "maxItemsOne": false
+                                            },
+                                            "primary": {
+                                                "maxItemsOne": false
+                                            },
+                                            "secondary": {
+                                                "maxItemsOne": false
+                                            },
+                                            "success": {
+                                                "maxItemsOne": false
+                                            },
+                                            "warning": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "palette_admin_portal": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "error": {
+                                                "maxItemsOne": false
+                                            },
+                                            "info": {
+                                                "maxItemsOne": false
+                                            },
+                                            "primary": {
+                                                "maxItemsOne": false
+                                            },
+                                            "secondary": {
+                                                "maxItemsOne": false
+                                            },
+                                            "success": {
+                                                "maxItemsOne": false
+                                            },
+                                            "warning": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "palette_login_box": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "error": {
+                                                "maxItemsOne": false
+                                            },
+                                            "info": {
+                                                "maxItemsOne": false
+                                            },
+                                            "primary": {
+                                                "maxItemsOne": false
+                                            },
+                                            "secondary": {
+                                                "maxItemsOne": false
+                                            },
+                                            "success": {
+                                                "maxItemsOne": false
+                                            },
+                                            "warning": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "allowed_origins": {
+                        "maxItemsOne": false
+                    },
+                    "auth_policy": {
+                        "maxItemsOne": true
+                    },
+                    "bot_detection_email": {
+                        "maxItemsOne": true
+                    },
+                    "brute_force_protection_email": {
+                        "maxItemsOne": true
+                    },
+                    "bulk_tenants_invites_email": {
+                        "maxItemsOne": true
+                    },
+                    "captcha_policy": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "ignored_emails": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "custom_domains": {
+                        "maxItemsOne": false
+                    },
+                    "email_verification_email": {
+                        "maxItemsOne": true
+                    },
+                    "facebook_social_login": {
+                        "maxItemsOne": true
+                    },
+                    "github_social_login": {
+                        "maxItemsOne": true
+                    },
+                    "google_social_login": {
+                        "maxItemsOne": true
+                    },
+                    "hosted_login": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "allowed_redirect_urls": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "impossible_travel_email": {
+                        "maxItemsOne": true
+                    },
+                    "lockout_policy": {
+                        "maxItemsOne": true
+                    },
+                    "magic_code_email": {
+                        "maxItemsOne": true
+                    },
+                    "magic_link_email": {
+                        "maxItemsOne": true
+                    },
+                    "mfa_authentication_app": {
+                        "maxItemsOne": true
+                    },
+                    "mfa_enroll_email": {
+                        "maxItemsOne": true
+                    },
+                    "mfa_otc_email": {
+                        "maxItemsOne": true
+                    },
+                    "mfa_policy": {
+                        "maxItemsOne": true
+                    },
+                    "mfa_recovery_code_email": {
+                        "maxItemsOne": true
+                    },
+                    "mfa_unenroll_email": {
+                        "maxItemsOne": true
+                    },
+                    "microsoft_social_login": {
+                        "maxItemsOne": true
+                    },
+                    "new_device_connected_email": {
+                        "maxItemsOne": true
+                    },
+                    "new_mfa_method_email": {
+                        "maxItemsOne": true
+                    },
+                    "oidc": {
+                        "maxItemsOne": true
+                    },
+                    "password_policy": {
+                        "maxItemsOne": true
+                    },
+                    "pwned_password_email": {
+                        "maxItemsOne": true
+                    },
+                    "remove_mfa_method_email": {
+                        "maxItemsOne": true
+                    },
+                    "reset_password_email": {
+                        "maxItemsOne": true
+                    },
+                    "reset_phone_number_email": {
+                        "maxItemsOne": true
+                    },
+                    "saml": {
+                        "maxItemsOne": true
+                    },
+                    "sms_authentication_enabled_email": {
+                        "maxItemsOne": true
+                    },
+                    "sso_domain_policy": {
+                        "maxItemsOne": true
+                    },
+                    "sso_multi_tenant_policy": {
+                        "maxItemsOne": true
+                    },
+                    "suspicious_ip_email": {
+                        "maxItemsOne": true
+                    },
+                    "user_activation_email": {
+                        "maxItemsOne": true
+                    },
+                    "user_invitation_email": {
+                        "maxItemsOne": true
+                    },
+                    "user_used_invitation_email": {
+                        "maxItemsOne": true
+                    }
+                }
+            }
+        },
+        "datasources": {
+            "frontegg_permission": {
+                "current": "frontegg:index/getPermission:getPermission",
+                "majorVersion": 1
+            }
+        }
+    },
+    "auto-settings": {}
+}

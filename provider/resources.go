@@ -20,11 +20,11 @@ import (
 	// Allow embedding bridge-metadata.json in the provider.
 	_ "embed"
 
+	frontegg "github.com/frontegg/terraform-provider-frontegg/provider" // Import the upstream provider
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
-	frontegg "github.com/frontegg/terraform-provider-frontegg/provider" // Import the upstream provider
 
 	"github.com/nrf110/pulumi-frontegg/provider/pkg/version"
 )
@@ -135,7 +135,7 @@ func Provider() tfbridge.ProviderInfo {
 		Repository: "https://github.com/nrf110/pulumi-frontegg",
 		// The GitHub Org for the provider - defaults to `terraform-providers`. Note that this should
 		// match the TF provider module's require directive, not any replace directives.
-		GitHubOrg:    "",
+		GitHubOrg:    "frontegg",
 		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
 		Config: map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
