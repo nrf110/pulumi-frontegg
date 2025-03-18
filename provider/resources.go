@@ -137,25 +137,9 @@ func Provider() tfbridge.ProviderInfo {
 		// match the TF provider module's require directive, not any replace directives.
 		GitHubOrg:    "frontegg",
 		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
-		Config: map[string]*tfbridge.SchemaInfo{
-			// Add any required configuration here, or remove the example below if
-			// no additional points are required.
-			"region": {
-				Type: "frontegg:region/region:Region",
-			},
-		},
+		Config:       map[string]*tfbridge.SchemaInfo{},
 		// If extra types are needed for configuration, they can be added here.
-		ExtraTypes: map[string]schema.ComplexTypeSpec{
-			"frontegg:region/region:Region": {
-				ObjectTypeSpec: schema.ObjectTypeSpec{
-					Type: "string",
-				},
-				Enum: []schema.EnumValueSpec{
-					{Name: "here", Value: "HERE"},
-					{Name: "overThere", Value: "OVER_THERE"},
-				},
-			},
-		},
+		ExtraTypes: map[string]schema.ComplexTypeSpec{},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// RespectSchemaVersion ensures the SDK is generated linking to the correct version of the provider.
 			RespectSchemaVersion: true,
@@ -186,6 +170,24 @@ func Provider() tfbridge.ProviderInfo {
 			// Use a wildcard import so NuGet will prefer the latest possible version.
 			PackageReferences: map[string]string{
 				"Pulumi": "3.*",
+			},
+		},
+		Resources: map[string]*tfbridge.ResourceInfo{
+			"frontegg_allowed_origin": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "AllowedOrigin"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"allowed_origin": {
+						CSharpName: "origin",
+					},
+				},
+			},
+			"frontegg_redirect_uri": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "RedirectUri"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"redirect_uri": {
+						CSharpName: "uri",
+					},
+				},
 			},
 		},
 	}

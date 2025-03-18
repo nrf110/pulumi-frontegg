@@ -10,3 +10,5 @@ RUN sudo chown -R "${DEVBOX_USER}:${DEVBOX_USER}" /code
 RUN devbox run -- echo "Installed Packages."
 
 RUN devbox shellenv --init-hook >> ~/.profile
+
+RUN go install github.com/golangci/golangci-lint/cmd/golangci-lint@

@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Immutable;
 
-namespace Pulumi.Xyz
+namespace Pulumi.Frontegg
 {
     public static class Config
     {
@@ -30,16 +30,56 @@ namespace Pulumi.Xyz
             }
         }
 
-        private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("xyz");
+        private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("frontegg");
 
-        private static readonly __Value<Pulumi.Xyz.Region.Region?> _region = new __Value<Pulumi.Xyz.Region.Region?>(() => __config.GetObject<Pulumi.Xyz.Region.Region>("region"));
+        private static readonly __Value<string?> _apiBaseUrl = new __Value<string?>(() => __config.Get("apiBaseUrl"));
         /// <summary>
-        /// A region which should be used.
+        /// The Frontegg api url. Override to change region. Defaults to EU url.
         /// </summary>
-        public static Pulumi.Xyz.Region.Region? Region
+        public static string? ApiBaseUrl
         {
-            get => _region.Get();
-            set => _region.Set(value);
+            get => _apiBaseUrl.Get();
+            set => _apiBaseUrl.Set(value);
+        }
+
+        private static readonly __Value<string?> _clientId = new __Value<string?>(() => __config.Get("clientId"));
+        /// <summary>
+        /// The client ID for a Frontegg portal API key.
+        /// </summary>
+        public static string? ClientId
+        {
+            get => _clientId.Get();
+            set => _clientId.Set(value);
+        }
+
+        private static readonly __Value<string?> _environmentId = new __Value<string?>(() => __config.Get("environmentId"));
+        /// <summary>
+        /// The client ID from environment settings.
+        /// </summary>
+        public static string? EnvironmentId
+        {
+            get => _environmentId.Get();
+            set => _environmentId.Set(value);
+        }
+
+        private static readonly __Value<string?> _portalBaseUrl = new __Value<string?>(() => __config.Get("portalBaseUrl"));
+        /// <summary>
+        /// The Frontegg portal url. Override to change region. Defaults to EU url.
+        /// </summary>
+        public static string? PortalBaseUrl
+        {
+            get => _portalBaseUrl.Get();
+            set => _portalBaseUrl.Set(value);
+        }
+
+        private static readonly __Value<string?> _secretKey = new __Value<string?>(() => __config.Get("secretKey"));
+        /// <summary>
+        /// The corresponding secret key for the API key.
+        /// </summary>
+        public static string? SecretKey
+        {
+            get => _secretKey.Get();
+            set => _secretKey.Set(value);
         }
 
     }

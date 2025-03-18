@@ -7,17 +7,48 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.Xyz
+namespace Pulumi.Frontegg
 {
     /// <summary>
-    /// The provider type for the xyz package. By default, resources use package-wide configuration
+    /// The provider type for the frontegg package. By default, resources use package-wide configuration
     /// settings, however an explicit `Provider` instance may be created and passed during resource
     /// construction to achieve fine-grained programmatic control over provider settings. See the
     /// [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
     /// </summary>
-    [XyzResourceType("pulumi:providers:xyz")]
+    [FronteggResourceType("pulumi:providers:frontegg")]
     public partial class Provider : global::Pulumi.ProviderResource
     {
+        /// <summary>
+        /// The Frontegg api url. Override to change region. Defaults to EU url.
+        /// </summary>
+        [Output("apiBaseUrl")]
+        public Output<string?> ApiBaseUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// The client ID for a Frontegg portal API key.
+        /// </summary>
+        [Output("clientId")]
+        public Output<string> ClientId { get; private set; } = null!;
+
+        /// <summary>
+        /// The client ID from environment settings.
+        /// </summary>
+        [Output("environmentId")]
+        public Output<string?> EnvironmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The Frontegg portal url. Override to change region. Defaults to EU url.
+        /// </summary>
+        [Output("portalBaseUrl")]
+        public Output<string?> PortalBaseUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// The corresponding secret key for the API key.
+        /// </summary>
+        [Output("secretKey")]
+        public Output<string> SecretKey { get; private set; } = null!;
+
+
         /// <summary>
         /// Create a Provider resource with the given unique name, arguments, and options.
         /// </summary>
@@ -25,8 +56,8 @@ namespace Pulumi.Xyz
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public Provider(string name, ProviderArgs? args = null, CustomResourceOptions? options = null)
-            : base("xyz", name, args ?? new ProviderArgs(), MakeResourceOptions(options, ""))
+        public Provider(string name, ProviderArgs args, CustomResourceOptions? options = null)
+            : base("frontegg", name, args ?? new ProviderArgs(), MakeResourceOptions(options, ""))
         {
         }
 
@@ -35,6 +66,11 @@ namespace Pulumi.Xyz
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "environmentId",
+                    "secretKey",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -46,10 +82,54 @@ namespace Pulumi.Xyz
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A region which should be used.
+        /// The Frontegg api url. Override to change region. Defaults to EU url.
         /// </summary>
-        [Input("region", json: true)]
-        public Input<Pulumi.Xyz.Region.Region>? Region { get; set; }
+        [Input("apiBaseUrl")]
+        public Input<string>? ApiBaseUrl { get; set; }
+
+        /// <summary>
+        /// The client ID for a Frontegg portal API key.
+        /// </summary>
+        [Input("clientId", required: true)]
+        public Input<string> ClientId { get; set; } = null!;
+
+        [Input("environmentId")]
+        private Input<string>? _environmentId;
+
+        /// <summary>
+        /// The client ID from environment settings.
+        /// </summary>
+        public Input<string>? EnvironmentId
+        {
+            get => _environmentId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _environmentId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// The Frontegg portal url. Override to change region. Defaults to EU url.
+        /// </summary>
+        [Input("portalBaseUrl")]
+        public Input<string>? PortalBaseUrl { get; set; }
+
+        [Input("secretKey", required: true)]
+        private Input<string>? _secretKey;
+
+        /// <summary>
+        /// The corresponding secret key for the API key.
+        /// </summary>
+        public Input<string>? SecretKey
+        {
+            get => _secretKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secretKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public ProviderArgs()
         {

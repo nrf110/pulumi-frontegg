@@ -1991,19 +1991,6 @@
                 "htmlTemplate",
                 "subject"
             ]
-        },
-        "frontegg:region/region:Region": {
-            "type": "string",
-            "enum": [
-                {
-                    "name": "here",
-                    "value": "HERE"
-                },
-                {
-                    "name": "overThere",
-                    "value": "OVER_THERE"
-                }
-            ]
         }
     },
     "provider": {
@@ -2071,7 +2058,12 @@
             "properties": {
                 "allowedOrigin": {
                     "type": "string",
-                    "description": "The allowed origin URI.\n"
+                    "description": "The allowed origin URI.\n",
+                    "language": {
+                        "csharp": {
+                            "name": "origin"
+                        }
+                    }
                 }
             },
             "required": [
@@ -2081,6 +2073,11 @@
                 "allowedOrigin": {
                     "type": "string",
                     "description": "The allowed origin URI.\n",
+                    "language": {
+                        "csharp": {
+                            "name": "origin"
+                        }
+                    },
                     "willReplaceOnChanges": true
                 }
             },
@@ -2093,6 +2090,11 @@
                     "allowedOrigin": {
                         "type": "string",
                         "description": "The allowed origin URI.\n",
+                        "language": {
+                            "csharp": {
+                                "name": "origin"
+                            }
+                        },
                         "willReplaceOnChanges": true
                     }
                 },
@@ -2341,7 +2343,12 @@
                 },
                 "redirectUri": {
                     "type": "string",
-                    "description": "The redirect URI.\n"
+                    "description": "The redirect URI.\n",
+                    "language": {
+                        "csharp": {
+                            "name": "uri"
+                        }
+                    }
                 }
             },
             "required": [
@@ -2352,6 +2359,11 @@
                 "redirectUri": {
                     "type": "string",
                     "description": "The redirect URI.\n",
+                    "language": {
+                        "csharp": {
+                            "name": "uri"
+                        }
+                    },
                     "willReplaceOnChanges": true
                 }
             },
@@ -2368,6 +2380,11 @@
                     "redirectUri": {
                         "type": "string",
                         "description": "The redirect URI.\n",
+                        "language": {
+                            "csharp": {
+                                "name": "uri"
+                            }
+                        },
                         "willReplaceOnChanges": true
                     }
                 },
