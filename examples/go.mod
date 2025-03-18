@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-xyz/examples
+module github.com/nrf110/pulumi-frontegg/examples
 
 go 1.22
 
