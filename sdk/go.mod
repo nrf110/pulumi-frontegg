@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-xyz/sdk
+module github.com/nrf110/pulumi-frontegg/sdk
 
 go 1.22
 
