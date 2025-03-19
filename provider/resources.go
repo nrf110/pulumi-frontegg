@@ -142,6 +142,7 @@ func Provider() tfbridge.ProviderInfo {
 		// If extra types are needed for configuration, they can be added here.
 		ExtraTypes: map[string]schema.ComplexTypeSpec{},
 		JavaScript: &tfbridge.JavaScriptInfo{
+			PackageName: "@nrf110/pulumi-frontegg",
 			// RespectSchemaVersion ensures the SDK is generated linking to the correct version of the provider.
 			RespectSchemaVersion: true,
 		},

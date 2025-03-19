@@ -1,5 +1,5 @@
 {
-    "name": "@pulumi/frontegg",
+    "name": "@nrf110/pulumi-frontegg",
     "version": "1.0.0-alpha.0+dev",
     "description": "A Pulumi package for creating and managing frontegg cloud resources.",
     "keywords": [
